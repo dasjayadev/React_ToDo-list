@@ -4,7 +4,7 @@ import { deleteTodoHAndler, setTextTodoHandler, submitTodoHandler } from '../act
 
 export let todoContextValue = createContext();
 
-function TodoContext({Children}) {
+function TodoContext({children}) {
   let initalState = {
     text:"",
     todo:[]
@@ -26,7 +26,7 @@ function TodoContext({Children}) {
     dispatch(submitTodoHandler())
   }
   return <todoContextValue.Provider value={{...todo,setTodoHandler,todoDeleteHandler,todoSubmitHandler}}>
-    {Children}
+    {children}
   </todoContextValue.Provider>
 }
 
